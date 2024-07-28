@@ -20,5 +20,5 @@
 计划整理分类 & 目录：(文档已完结请选中 checkbox)
 
 - [x] [梦境](api)
-    - [x] [梦境存活名单](api/survival)
-    - [x] [梦境死亡名单](api/dead)
+    - [x] [梦境存活名单](api/dream/survival)
+    - [x] [梦境死亡名单](api/dream/dead)
