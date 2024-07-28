@@ -1,0 +1,30 @@
+name: main
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # 每小时的整点触发任务
+  workflow_dispatch:
+
+jobs:
+  check_dreams:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+    - run: pip install -r ./utils/requirements.txt
+
+    - name: Check Dreams
+      run: python ./utils/check.py
+
+    - name: Commit
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Update
+        branch: main
+        files: .
