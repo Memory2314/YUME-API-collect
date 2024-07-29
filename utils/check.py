@@ -60,8 +60,7 @@ def main():
     killAD_Dreams = []
     AD_Dreams = []
     blacklist = readFile('./api/blacklist.txt', binary=False).splitlines()[1::2]
-    # getDreamCount()
-    DreamCount = 10
+    getDreamCount()
 
     def processDream(DreamId):
         dreamInfo = getDreamById(DreamId)
