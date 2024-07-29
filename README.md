@@ -19,6 +19,10 @@
 
 计划整理分类 & 目录：(文档已完结请选中 checkbox)
 
-- [x] [梦境](api)
+- [x] [梦境](dream)
     - [x] [梦境存活名单](api/dream/survival)
     - [x] [梦境死亡名单](api/dream/dead)
+    - [x] [梦境AD名单](api/dream/AD)
+    - [x] [梦境纯净名单](api/dream/killAD)
+
+- [x] [黑名单](api/blacklist.txt)
