@@ -23,8 +23,11 @@ jobs:
       run: python ./utils/check.py
 
     - name: Commit
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: Update
-        branch: main
-        files: .
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add .
+        git commit -m "Update"
+        git config pull.rebase false
+        git pull
+        git push -u origin main
