@@ -45,6 +45,8 @@ def getDreamById(DreamId):
     # 存活状态
     div_element = soup.find('div', class_='entry clearit')
     dreamInfo['status'] = 'alive' if div_element else 'dead'
+    if dreamInfo['status'] == 'dead':
+        return dreamInfo
     # 用户信息
     a_element = soup.find('a', class_='name')
     dreamInfo['userId'] = a_element.get('href')[8:]
@@ -65,9 +67,9 @@ def main():
     def processDream(DreamId):
         dreamInfo = getDreamById(DreamId)
         status = dreamInfo['status']
-        userId = dreamInfo['userId']
         if (status == 'alive'):
             alive_dreams.append(DreamId)
+            userId = dreamInfo['userId']
             if (userId in blacklist):
                 AD_Dreams.append(DreamId)
                 print(f'{DreamId}号梦境已存活 已标记为AD')
